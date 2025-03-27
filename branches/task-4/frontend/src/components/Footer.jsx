@@ -2,8 +2,9 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-800 text-white p-4 text-center">
-      <p>&copy; 2025 Product Store</p>
+    <footer className="bg-black text-green-500 p-6 text-center">
+      <p className="text-lg font-bold">&copy; 2025 Product Store</p>
+      <p className="text-sm italic">Your one-stop shop for everything!</p>
     </footer>
   );
 };
