@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Tasks</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 20px;
+            padding: 20px;
+        }
+        h1 {
+            color: #4CAF50;
+            text-align: center;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, button {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 16px;
+            display: block;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            border: none;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        p {
+            margin-top: 5px;
+            font-size: 16px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+<h1>JavaScript Tasks</h1>
+
+<div class="container">
+    <!-- Task 1 -->
+    <label>Enter Age:</label>
+    <input type="number" id="ageInput" />
+    <button onclick="checkAdult()">Check Adult</button>
+    <p id="adultResult"></p>
+</div>
+
+<div class="container">
+    <!-- Task 2 -->
+    <label>Enter X:</label>
+    <input type="number" id="xInput" />
+    <label>Enter Y:</label>
+    <input type="number" id="yInput" />
+    <button onclick="performOperations()">Perform Operations</button>
+    <p id="operationsResult"></p>
+</div>
+
+<div class="container">
+    <!-- Task 3 -->
+    <label>Enter Number:</label>
+    <input type="number" id="numberInput" />
+    <button onclick="checkEvenOdd()">Check Even/Odd</button>
+    <p id="evenOddResult"></p>
+</div>
+
+<div class="container">
+    <!-- Task 4 -->
+    <button onclick="storeNumbers()">Store Numbers (1-5)</button>
+    <p id="storedNumbers"></p>
+</div>
+
+<div class="container">
+    <!-- Task 5 -->
+    <label>Enter Number for Square:</label>
+    <input type="number" id="squareInput" />
+    <button onclick="getSquare()">Get Square</button>
+    <p id="squareResult"></p>
+</div>
+
+<script>
+    // Task 1: Check if age is adult
+    function checkAdult() {
+        let age = parseInt(document.getElementById('ageInput').value);
+        let isAdult = age >= 18;
+        document.getElementById('adultResult').innerText = `Age: ${age}, Is Adult: ${isAdult}`;
+    }
+
+    // Task 2: Perform operations on x and y
+    function performOperations() {
+        let x = parseInt(document.getElementById('xInput').value);
+        let y = parseInt(document.getElementById('yInput').value);
+        let addition = x + y;
+        let multiplication = x * y;
+        let modulus = x % y;
+        document.getElementById('operationsResult').innerText = 
+            `Addition: ${addition}, Multiplication: ${multiplication}, Modulus: ${modulus}`;
+    }
+
+    // Task 3: Check if a number is even or odd
+    function checkEvenOdd() {
+        let n = parseInt(document.getElementById('numberInput').value);
+        let isEven = (n % 2 === 0) ? "Even" : "Odd";
+        document.getElementById('evenOddResult').innerText = `Number: ${n}, Result: ${isEven}`;
+    }
+
+    // Task 4: Store numbers from 1 to 5 in an array
+    function storeNumbers() {
+        let numbers = [];
+        for (let i = 1; i <= 5; i++) {
+            numbers.push(i);
+        }
+        document.getElementById('storedNumbers').innerText = `Stored Numbers: ${numbers.join(", ")}`;
+    }
+
+    // Task 5: Function to return square of a number
+    function getSquare() {
+        let num = parseInt(document.getElementById('squareInput').value);
+        let result = num * num;
+        document.getElementById('squareResult').innerText = `Square of ${num}: ${result}`;
+    }
+</script>
+
+</body>
+</html>
